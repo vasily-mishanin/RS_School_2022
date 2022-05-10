@@ -55,7 +55,7 @@ const getPlugins = () => {
 
     new MiniCSSExtractPlugin({ filename: '[name].[hash].css' }),
 
-    new ESLintPlugin(),
+    //new ESLintPlugin(),
   ];
 
   if (isProd) basePlugins.push(new BundleAnalyzerPlugin());
