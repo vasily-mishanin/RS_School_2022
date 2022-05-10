@@ -1,6 +1,6 @@
 #### RS_School_2022
 
-Projects source code by folders
+Virtual-Keyboard project source code
 
 ##### Virtual-Keyboard webpage
 
