@@ -1,10 +1,6 @@
 # RS_School_2022
 
-Private repository for @vasily-mishanin
-
-#### Me on GitHub
-
-[https://github.com/vasily-mishanin](https://github.com/vasily-mishanin)
+Projects bundles by folders
 
 ## Projects
 
