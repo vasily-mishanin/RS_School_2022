@@ -10,4 +10,4 @@ Private repository for @vasily-mishanin
 
 #### Virtual-Keyboard
 
-[https://rolling-scopes-school.github.io/vasily-mishanin-JSFE2022Q1/virtual-keyboard/](https://rolling-scopes-school.github.io/vasily-mishanin-JSFE2022Q1/virtual-keyboard/)
+[https://vasily-mishanin.github.io/RS_School_2022/virtual-keyboard/](https://vasily-mishanin.github.io/RS_School_2022/virtual-keyboard/)
