@@ -1,13 +1,7 @@
-# RS_School_2022
+#### RS_School_2022
 
-Private repository for @vasily-mishanin
+Projects source code by folders
 
-#### Me on GitHub
+##### Virtual-Keyboard webpage
 
-[https://github.com/vasily-mishanin](https://github.com/vasily-mishanin)
-
-## Projects
-
-#### Virtual-Keyboard
-
-[https://rolling-scopes-school.github.io/vasily-mishanin-JSFE2022Q1/virtual-keyboard/](https://rolling-scopes-school.github.io/vasily-mishanin-JSFE2022Q1/virtual-keyboard/)
+[https://vasily-mishanin.github.io/RS_School_2022/virtual-keyboard/](https://vasily-mishanin.github.io/RS_School_2022/virtual-keyboard/)
