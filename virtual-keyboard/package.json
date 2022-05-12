@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "task from RS School Frontend RU",
   "private": true,
-   "eslintConfig": {
-        "env": {
-            "browser": true,
-            "node": true
-        }
-    },
+  "parser": "@babel/eslint-parser",
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development webpack --mode development",

@@ -1,4 +1,5 @@
 import Key from './Key';
+import keys from './keys';
 
 class Keyboard {
   constructor(langA, langB) {
@@ -8,79 +9,8 @@ class Keyboard {
     this.lowerCase = true;
     this.map = {};
   }
-
-  firstRowChars = [
-    ['§', '±', '&#62;', '&#60;', '', 'Backquote'],
-    ['1', '!', '1', '!', '', 'Digit1'],
-    ['2', '@', '2', '&#34;', '', 'Digit2'],
-    ['3', '#', '3', '№', '', 'Digit3'],
-    ['4', '$', '4', '%', '', 'Digit4'],
-    ['5', '%', '5', ':', '', 'Digit5'],
-    ['6', '^', '6', ',', '', 'Digit6'],
-    ['7', '&', '7', '.', '', 'Digit7'],
-    ['8', '*', '8', ';', '', 'Digit8'],
-    ['9', '(', '9', '(', '', 'Digit9'],
-    ['0', ')', '0', ')', '', 'Digit0'],
-    ['-', '_', '-', '_', '', 'Minus'],
-    ['=', '+', '=', '+', '', 'Equal'],
-  ];
-
-  secondRowChars = [
-    ['q', 'Q', 'й', 'Й', 'letter', 'KeyQ'],
-    ['w', 'W', 'ц', 'Ц', 'letter', 'KeyW'],
-    ['e', 'E', 'у', 'У', 'letter', 'KeyE'],
-    ['r', 'R', 'к', 'К', 'letter', 'KeyR'],
-    ['t', 'T', 'е', 'Е', 'letter', 'KeyT'],
-    ['y', 'Y', 'н', 'Н', 'letter', 'KeyY'],
-    ['u', 'U', 'г', 'Г', 'letter', 'KeyU'],
-    ['i', 'I', 'ш', 'Ш', 'letter', 'KeyI'],
-    ['o', 'O', 'щ', 'Щ', 'letter', 'KeyO'],
-    ['p', 'P', 'з', 'З', 'letter', 'KeyP'],
-    ['[', '{', 'х', 'Х', 'letter', 'BracketLeft'],
-    [']', '}', 'ъ', 'Ъ', 'letter', 'BracketRight'],
-  ];
-
-  thirdRowChars = [
-    ['a', 'A', 'ф', 'Ф', 'letter', 'KeyA'],
-    ['s', 'S', 'ы', 'Ы', 'letter', 'KeyS'],
-    ['d', 'D', 'в', 'В', 'letter', 'KeyD'],
-    ['f', 'F', 'а', 'А', 'letter', 'KeyF'],
-    ['g', 'G', 'п', 'П', 'letter', 'KeyG'],
-    ['h', 'H', 'р', 'Р', 'letter', 'KeyH'],
-    ['j', 'J', 'о', 'О', 'letter', 'KeyJ'],
-    ['k', 'K', 'л', 'Л', 'letter', 'KeyK'],
-    ['l', 'L', 'д', 'Д', 'letter', 'KeyL'],
-    [';', ':', 'ж', 'Ж', 'letter', 'Semicolon'],
-    ['&#39;', '&#34;', 'э', 'Э', 'letter', 'Quote'],
-    ['&#92;', '&#124;', 'ё', 'Ё', 'letter', 'Backslash'],
-  ];
-
-  fourthRowChars = [
-    ['`', '~', ']', '[', '', 'IntlBackslash'],
-    ['z', 'Z', 'я', 'Я', 'letter', 'KeyZ'],
-    ['x', 'X', 'ч', 'Ч', 'letter', 'KeyX'],
-    ['c', 'C', 'с', 'С', 'letter', 'KeyC'],
-    ['v', 'V', 'м', 'М', 'letter', 'KeyV'],
-    ['b', 'B', 'и', 'И', 'letter', 'KeyB'],
-    ['n', 'N', 'т', 'Т', 'letter', 'KeyN'],
-    ['m', 'M', 'ь', 'Ь', 'letter', 'KeyM'],
-    [',', '&#60;', 'б', 'Б', 'letter', 'Comma'],
-    ['.', '&#62;', 'ю', 'Ю', 'letter', 'Period'],
-    ['/', '?', '/', '?', '', 'Slash'],
-  ];
-
-  fifthRowChars = [
-    ['Fn', '', 'Fn', '', 'function', 'Function'],
-    ['control', '', 'control', '', 'control', 'ControlLeft'],
-    ['option', '', 'option', '', 'option-left', 'AltLeft'],
-    ['command', '', 'command', '', 'command-left', 'MetaLeft'],
-    ['&#160;', '', '&#160;', '', 'space', 'Space'],
-    ['command', '', 'command', '', 'command-right', 'MetaRight'],
-    ['option', '', 'option', '', 'option-right', 'AltRight'],
-  ];
-
-  firstRowHTML() {
-    const firstRowKeys = this.firstRowChars.map((chars) => new Key(...chars));
+  firstRowHTML = () => {
+    const firstRowKeys = keys.firstRowChars.map((chars) => new Key(...chars));
     const keys = firstRowKeys.map((key) => key.getKeyHTML());
     const keyBACKSPACE = new Key(
       '&#9003;',
@@ -92,19 +22,19 @@ class Keyboard {
     );
     keys.push(keyBACKSPACE.getKeyHTML());
     return `<div class ="keyboard__row">${keys.join('\n')}</div>`;
-  }
+  };
 
-  secondRowHTML() {
+  secondRowHTML = () => {
     const keyTAB = new Key('Tab', '', 'Tab', '', 'tab', 'Tab');
-    const secondRowKeys = this.secondRowChars.map((chars) => new Key(...chars));
+    const secondRowKeys = keys.secondRowChars.map((chars) => new Key(...chars));
     const keys = secondRowKeys.map((key) => key.getKeyHTML());
     keys.unshift(keyTAB.getKeyHTML());
     const keyENTER = new Key('Enter', '', 'Enter', '', 'enter', 'Enter');
     keys.push(keyENTER.getKeyHTML());
     return `<div class ="keyboard__row">${keys.join('\n')}</div>`;
-  }
+  };
 
-  thirdRowHTML() {
+  thirdRowHTML = () => {
     const keyCAPSLOCK = new Key(
       'CapsLock',
       '',
@@ -113,13 +43,13 @@ class Keyboard {
       'capslock',
       'CapsLock'
     );
-    const thirdRowKeys = this.thirdRowChars.map((chars) => new Key(...chars));
+    const thirdRowKeys = keys.thirdRowChars.map((chars) => new Key(...chars));
     const keys = thirdRowKeys.map((key) => key.getKeyHTML());
     keys.unshift(keyCAPSLOCK.getKeyHTML());
     return `<div class ="keyboard__row">${keys.join('\n')}</div>`;
-  }
+  };
 
-  fourthRowHTML() {
+  fourthRowHTML = () => {
     const keyShiftLeft = new Key(
       'Shift',
       '',
@@ -136,15 +66,15 @@ class Keyboard {
       'shift-right',
       'ShiftRight'
     );
-    const fourthRowKeys = this.fourthRowChars.map((chars) => new Key(...chars));
+    const fourthRowKeys = keys.fourthRowChars.map((chars) => new Key(...chars));
     const keys = fourthRowKeys.map((key) => key.getKeyHTML());
     keys.unshift(keyShiftLeft.getKeyHTML());
     keys.push(keyShiftRight.getKeyHTML());
     return `<div class ="keyboard__row">${keys.join('\n')}</div>`;
-  }
+  };
 
-  fifthRowHTML() {
-    const fifthRowKeys = this.fifthRowChars.map((chars) => new Key(...chars));
+  fifthRowHTML = () => {
+    const fifthRowKeys = keys.fifthRowChars.map((chars) => new Key(...chars));
     const keysHTML = fifthRowKeys.map((key) => key.getKeyHTML());
     const arrowsHTML = `<div class="arrows">
       <span class="arrows__left arrow-key" id="ArrowLeft" data-char="&#9664;">&#9664;</span>
@@ -157,9 +87,9 @@ class Keyboard {
     return `<div class ="keyboard__row bottom-row">${keysHTML.join(
       '\n'
     )} \n ${arrowsHTML}</div>`;
-  }
+  };
 
-  initRender(container) {
+  initRender = (container) => {
     console.log(this.currentLang);
     const keyboardContainer = document.createElement('div');
     keyboardContainer.classList.add('keyboard');
@@ -186,9 +116,9 @@ class Keyboard {
         key.querySelector('.caseUp').classList.add('hidden');
       });
     }
-  }
+  };
 
-  changeLanguage(keyboardContainer) {
+  changeLanguage = (keyboardContainer) => {
     console.log('this.currentLang =>', this.currentLang);
     if (this.currentLang === 'EN') {
       keyboardContainer
@@ -209,9 +139,9 @@ class Keyboard {
       window.localStorage.setItem('lang', 'EN');
       this.currentLang = 'EN';
     }
-  }
+  };
 
-  toLowerCaseLetters(keyboardContainer) {
+  toLowerCaseLetters = (keyboardContainer) => {
     const letters = keyboardContainer.querySelectorAll('.letter');
     letters.forEach((key) => {
       key.querySelectorAll('.caseUp').forEach((el) => {
@@ -221,9 +151,9 @@ class Keyboard {
         el.classList.remove('hidden');
       });
     });
-  }
+  };
 
-  toUppersCaseLetters(keyboardContainer) {
+  toUppersCaseLetters = (keyboardContainer) => {
     const letters = keyboardContainer.querySelectorAll('.letter');
     letters.forEach((key) => {
       key.querySelectorAll('.caseDown').forEach((el) => {
@@ -233,9 +163,9 @@ class Keyboard {
         el.classList.remove('hidden');
       });
     });
-  }
+  };
 
-  listenKeyboard() {
+  listenKeyboard = () => {
     const keybpard = document.querySelector('.keyboard');
     console.log(keybpard);
 
@@ -319,7 +249,7 @@ class Keyboard {
         e.target.closest('.keyboard__key') || e.target.closest('.arrow-key');
       key.classList.remove('active');
     });
-  }
+  };
 }
 
 export default Keyboard;

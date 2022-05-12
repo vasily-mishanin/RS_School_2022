@@ -55,7 +55,7 @@ const getPlugins = () => {
 
     new MiniCSSExtractPlugin({ filename: '[name].[hash].css' }),
 
-    //new ESLintPlugin(),
+    new ESLintPlugin(),
   ];
 
   if (isProd) basePlugins.push(new BundleAnalyzerPlugin());
@@ -67,6 +67,7 @@ module.exports = {
   mode: 'development', // or "production" -> minification of code (via NODE_ENV)
   //target: "web",
   context: path.resolve(__dirname, 'src'),
+
   entry: {
     // index: path.resolve(__dirname, "src/index.js"), // "index" -> [name], __dirname - system variable
     main: ['@babel/polyfill', './index.js'], // "index" -> [name], __dirname - system variable

@@ -22,7 +22,8 @@ root.appendChild(textarea);
 keyboard.initRender(root);
 keyboard.listenKeyboard();
 
-const footerHTML = `<p>Эта клавиатура сделана на MacOS</p> <p>Для переключения языка комбинация: левая control +  Space</p>`;
+const footerHTML =
+  '<p>Эта клавиатура сделана на MacOS</p> <p>Для переключения языка комбинация: левая control +  Space</p>';
 const footer = document.createElement('footer');
 footer.classList.add('footer');
 footer.innerHTML = footerHTML;
